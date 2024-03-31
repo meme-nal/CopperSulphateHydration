@@ -9,6 +9,8 @@
     datatool
 }
 
+\usetikzlibrary{arrows.meta, graphs}
+
 \title{Determination of the heat of hydration of bivalent copper sulphate pentahydrate}
 \author{Afanasev S.M., Nesterov I.D.}
 \date{}
@@ -40,6 +42,11 @@
         because the formation of a new phase from liquid to solid phase is very slow and incomplete.
         Theoretical calculation of the thermal effect is carried out on the basis of Hess's law
         on the basis of the following cycle: \\
+
+        \tikz \graph [clockwise=3, math nodes,
+                      edges = {double equal sign distance, -Implies}] {
+            "\alpha", "\beta", "\gamma";
+            "\aplha" -> "\beta" -> "\gamma" -> "\alpha"};
 
         % The place for cycle
         %
