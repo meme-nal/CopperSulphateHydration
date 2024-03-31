@@ -92,6 +92,10 @@
                 ]
                 \addplot[only marks] table [col sep=comma] {../data/raw/experiment1.csv};
                 \addplot[model] table [col sep=comma] {../data/raw/experiment1.csv};
+                    \coordinate[label={90:$A$}] (A) at (axis cs:10,22.430);
+                    \coordinate[label={90:$B$}] (B) at (axis cs:100,22.434);
+                    \coordinate[label={90:$C$}] (C) at (axis cs:170,21.269);
+                    \coordinate[label={90:$D$}] (D) at (axis cs:300,21.365);
             \end{axis}
         \end{tikzpicture}
         \caption{Dissolution graph of \ch{NH4Cl} in distilled water}
@@ -134,6 +138,10 @@ anhydrous salt }
                     ]
                     \addplot [only marks] table [col sep=comma] {../data/raw/experiment2.csv};
                     \addplot [model] table [col sep=comma] {../data/raw/experiment2.csv};
+                        \coordinate[label={-90:$A$}] (A) at (axis cs:10,22.333);
+                        \coordinate[label={-90:$B$}] (B) at (axis cs:100,22.368);
+                        \coordinate[label={90:$C$}] (C) at (axis cs:140,23.323);
+                        \coordinate[label={90:$D$}] (D) at (axis cs:300,23.324);
                 \end{axis}
             \end{tikzpicture}
             \caption{Dissolution graph of \ch{CuSO4} in distilled water}
@@ -167,6 +175,10 @@ anhydrous salt }
                     ]
                     \addplot [only marks] table [col sep=comma] {../data/raw/experiment3.csv};
                     \addplot [model] table [col sep=comma] {../data/raw/experiment3.csv};
+                        \coordinate[label={-90:$A$}] (A) at (axis cs:10,22.038);
+                        \coordinate[label={-90:$B$}] (B) at (axis cs:100,22.098);
+                        \coordinate[label={90:$C$}] (C) at (axis cs:200,22.117);
+                        \coordinate[label={90:$D$}] (D) at (axis cs:300,22.160);
                 \end{axis}
             \end{tikzpicture}
              \caption{Dissolution graph of \ch{CuSO4*}5 \ch{H2O} in distilled water}
