@@ -9,6 +9,8 @@
     datatool
 }
 
+\pgfplotsset{model/.style = {red}}
+
 \title{Determination of the heat of hydration of bivalent copper sulphate pentahydrate}
 \author{Afanasev S.M., Nesterov I.D.}
 \date{}
@@ -88,7 +90,8 @@
                     axis lines=middle,
                     grid=both
                 ]
-                \addplot [only marks] table [col sep=comma] {../data/raw/experiment1.csv};
+                \addplot[only marks] table [col sep=comma] {../data/raw/experiment1.csv};
+                \addplot[model] table [col sep=comma] {../data/raw/experiment1.csv};
             \end{axis}
         \end{tikzpicture}
         \caption{Dissolution graph of \ch{NH4Cl} in distilled water}
@@ -130,6 +133,7 @@ anhydrous salt }
                         grid=both
                     ]
                     \addplot [only marks] table [col sep=comma] {../data/raw/experiment2.csv};
+                    \addplot [model] table [col sep=comma] {../data/raw/experiment2.csv};
                 \end{axis}
             \end{tikzpicture}
             \caption{Dissolution graph of \ch{CuSO4} in distilled water}
@@ -162,6 +166,7 @@ anhydrous salt }
                         grid=both
                     ]
                     \addplot [only marks] table [col sep=comma] {../data/raw/experiment3.csv};
+                    \addplot [model] table [col sep=comma] {../data/raw/experiment3.csv};
                 \end{axis}
             \end{tikzpicture}
              \caption{Dissolution graph of \ch{CuSO4*}5 \ch{H2O} in distilled water}
