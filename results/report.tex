@@ -97,12 +97,18 @@
 
                 \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(100,22.434)(0,22.434)};
                 \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(170,21.269)(0,21.269)};
-                \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(0,21.8515)(220,21.8515)};    
+                \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(0,21.8515)(220,21.8515)};   
+                \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(80,21.165)(190,21.270)};  %экстраполяция CD
+                \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(100,22.434)(180,22.443)};  %экстраполяция AB
+                \draw[<->, thick, magenta, color=black] (axis cs: 107,22.43853) -- (axis cs: 107,21.19577); %прямая delta T
                     \coordinate[label={90:$A$}] (A) at (axis cs:10,22.430);
                     \coordinate[label={90:$B$}] (B) at (axis cs:100,22.434);
                     \coordinate[label={90:$C$}] (C) at (axis cs:170,21.269);
                     \coordinate[label={90:$D$}] (D) at (axis cs:300,21.365);
                     \coordinate[label={90:$g$}] (g) at (axis cs:112.394,21.8515);
+                    \coordinate[label={90:$n$}] (n) at (axis cs:10,21.269);
+                    \coordinate[label={-90:$m$}] (m) at (axis cs:10,22.430);
+                    \coordinate[label={90:$k$}] (k) at (axis cs:10,21.8515);
             \end{axis}
         \end{tikzpicture}
         \caption{Dissolution graph of \ch{NH4Cl} in distilled water}
@@ -113,18 +119,25 @@
         
      Determination of the calorimeter constant:
     \begin{equation}
-       K = \frac{\Delta H_m \cdot m_{sal}}{ \Delta T \cdot M} - \left(m_{sal} - m_{water}\right) \cdot c 
+       K = -\frac{\Delta H_m \cdot m_{sal}}{ \Delta T \cdot M} - \left(m_{sal} + m_{water}\right) \cdot c 
     \end{equation}
         where $\Delta H_m$ - integral heat of dissolution of salt, expressed in J/mol;
         $\Delta T$ is the temperature change during experiment, measured in °C; 
         $m_{\text{sal}}$ and $m_{\text{water}}$ represent the mass of salt and water, respectively, in grams; 
         $M$ denotes the molecular weight of the salt, measured in g/mol; 
         and $c$ is the specific heat capacity of the resulting solution
-        (the heat capacity of dilute solutions of inorganic salts in water is practically the same and slightly differs from the heat capacity of water, specifically $c = 4.184$ J/\ch{(g*K)}. \\ \\
+        (the heat capacity of dilute solutions of inorganic salts in water is practically the same and slightly differs from the heat capacity of water, specifically $c = 4.184$ J/\ch{(g*K)}. \\ 
+        
+        Thus, by projecting points B and C onto the ordinate axis, then drawing a line parallel to OX, we obtain lines m and n, respectively. The line k is the midpoint of the segment mn, drawn to intersect with the graph, let us call the point of intersection - g. Extrapolating AB and CD, a vertical line passing through g, corresponding to $\Delta T$, was found. \\  \\     
+        After plotting, the constant of the calorimeter is calculated:
+    
+    \begin{equation}
+       K = -\frac{15.1 \cdot 2}{ (22.43853 - 21.19577) \cdot 53.49} - \left(2 + 100\right) \cdot 4.184  = -427.2223 \hspace{2 mm} \ch{J/°C}
+    \end{equation}
 
 
 
-        --a fucking place to calculate--
+        
 
         \subsection{Determination of the heat effect of dissolution
 anhydrous salt }
@@ -155,7 +168,7 @@ anhydrous salt }
         \end{figure}
         Determination of the integral heat of dissolution of an anhydrous salt: 
         \begin{equation}
-            \Delta_{sol}H^\circ_{dry} = \frac{(K + (m_{water} + m_{crystal}) \cdot c) \cdot \Delta T \cdot M_{crystal}}{m_{crystal}}
+            \Delta_{sol}H^\circ_{dry} = \frac{-(K + (m_{water} + m_{crystal}) \cdot c) \cdot \Delta T \cdot M_{crystal}}{m_{crystal}}
         \end{equation}
         where $ m_{crystal}$, $m_{water}$ - the mass of anhydrous salt and water, respectively, g; $M_{crystal}$ - is the molecular mass of anhydrous salt, g/mol; c - the specific heat capacity of the formed solution; $\Delta T$ - the temperature change during the experiment, °C. \\
 
@@ -192,7 +205,7 @@ anhydrous salt }
         \end{figure}
         Determination of the integral heat of dissolution of crystalline hydrate:
          \begin{equation}
-            \Delta_{sol}H^\circ_{hyd} = \frac{(K + (m_{water} + m_{hyd}) \cdot c) \cdot \Delta T \cdot M_{hyd}}{m_{hyd}}
+            \Delta_{sol}H^\circ_{hyd} = \frac{-(K + (m_{water} + m_{hyd}) \cdot c) \cdot \Delta T \cdot M_{hyd}}{m_{hyd}}
         \end{equation}
          where $ m_{hydl}$, $m_{water}$ - the mass of crystalline hydrate  and water, respectively, g; $M_{hyd}$ - is the molecular mass of crystalline hydrate, g/mol; c - the specific heat capacity of the formed solution; $\Delta T$ - the temperature change during the experiment, °C. \\
 
