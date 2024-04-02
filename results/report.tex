@@ -85,7 +85,7 @@
         \centering
         \begin{tikzpicture}
             \begin{axis}[scale only axis,
-                    width=10cm,
+                    width=12cm,
                     ylabel=$T$,
                     xlabel=$t$,
                     xmin=0, xmax=330,
@@ -101,10 +101,11 @@
 
                 \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(100,22.434)(0,22.434)};
                 \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(170,21.269)(0,21.269)};
-                \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(0,21.8515)(220,21.8515)};   
+                \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(0,21.8515)(180,21.8515)};   
                 \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(80,21.165)(190,21.270)};  %экстраполяция CD
                 \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(100,22.434)(180,22.443)};  %экстраполяция AB
-                \draw[<->, thick, magenta, color=black] (axis cs: 107,22.43853) -- (axis cs: 107,21.19577); %прямая delta T
+                \draw[<->, thick, magenta, color=black] (axis cs: 107.5649,22.4382) -- (axis cs: 107.5649,21.1912); %прямая delta T
+                    % delta T = 1.247
                     \coordinate[label={90:$A$}] (A) at (axis cs:10,22.430);
                     \coordinate[label={90:$B$}] (B) at (axis cs:100,22.434);
                     \coordinate[label={90:$C$}] (C) at (axis cs:170,21.269);
@@ -150,7 +151,8 @@ anhydrous salt}
         \begin{figure}[h]
             \centering
             \begin{tikzpicture}
-                \begin{axis}[
+                \begin{axis}[scale only axis,
+                        width=12cm,
                         ylabel=$T$,
                         xlabel=$t$,
                         xmin=0, xmax=330,
@@ -163,10 +165,21 @@ anhydrous salt}
                     ]
                     \addplot [only marks] table [col sep=comma] {../data/raw/experiment2.csv};
                     \addplot [model] table [col sep=comma] {../data/raw/experiment2.csv};
+
+                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(100,22.368)(0,22.368)};
+                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(140,23.323)(0,23.323)};
+                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(180,22.8455)(0,22.8455)};
+                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(10,22.333)(180,22.399002)};  %экстраполяция AB
+                    \draw[<->, thick, magenta, color=black] (axis cs: 105.8303,23.323) -- (axis cs: 105.8303,22.37016); %прямая delta T
+                        % delta T = 0.95284
                         \coordinate[label={-90:$A$}] (A) at (axis cs:10,22.333);
                         \coordinate[label={-90:$B$}] (B) at (axis cs:100,22.368);
                         \coordinate[label={90:$C$}] (C) at (axis cs:140,23.323);
                         \coordinate[label={90:$D$}] (D) at (axis cs:300,23.324);
+                        \coordinate[label={90:$g$}] (g) at (axis cs:120,22.8455);
+                        \coordinate[label={90:$n$}] (n) at (axis cs:10,22.368);
+                        \coordinate[label={-90:$m$}] (m) at (axis cs:10,23.323);
+                        \coordinate[label={90:$k$}] (k) at (axis cs:10,22.8455);
                 \end{axis}
             \end{tikzpicture}
             \caption{Dissolution graph of \ch{CuSO4} in distilled water}
@@ -187,7 +200,8 @@ anhydrous salt}
         \begin{figure}[h]
             \centering
             \begin{tikzpicture}
-                \begin{axis}[
+                \begin{axis}[scale only axis,
+                        width=12cm,
                         ylabel=$T$,
                         xlabel=$t$,
                         xmin=0, xmax=330,
@@ -200,10 +214,22 @@ anhydrous salt}
                     ]
                     \addplot [only marks] table [col sep=comma] {../data/raw/experiment3.csv};
                     \addplot [model] table [col sep=comma] {../data/raw/experiment3.csv};
+
+                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(100,22.098)(0,22.098)};
+                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(200,22.117)(0,22.117)};
+                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(150,22.1075)(0,22.1075)};
+                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(170,22.1499)(10,22.038)}; % AB
+                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(300,22.160)(100,22.0742)}; % CD
+                    \draw[<->, thick, magenta, color=black] (axis cs: 125.4412,22.0869) -- (axis cs: 125.4412,22.1187); %прямая delta T
+                        % delta T = 0.0318
                         \coordinate[label={-90:$A$}] (A) at (axis cs:10,22.038);
                         \coordinate[label={-90:$B$}] (B) at (axis cs:100,22.098);
                         \coordinate[label={90:$C$}] (C) at (axis cs:200,22.117);
                         \coordinate[label={90:$D$}] (D) at (axis cs:300,22.160);
+                        \coordinate[label={90:$g$}] (g) at (axis cs:135,22.1065);
+                        \coordinate[label={90:$n$}] (n) at (axis cs:10,22.098);
+                        \coordinate[label={90:$m$}] (m) at (axis cs:10,22.117);
+                        \coordinate[label={90:$k$}] (k) at (axis cs:10,22.1075);
                 \end{axis}
             \end{tikzpicture}
              \caption{Dissolution graph of \ch{CuSO4*}5 \ch{H2O} in distilled water}
