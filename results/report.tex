@@ -9,6 +9,7 @@
     datatool
 }
 
+\linespread{1} % The space between lines in text
 \pgfplotsset{model/.style = {red}}
 
 
@@ -30,7 +31,8 @@
     \tableofcontents
     \newpage
 
-    \section{Introduction}
+    \addcontentsline{toc}{section}{Introduction} % This allows you type section name without numbers
+    \section*{Introduction}
         \textbf{\textit{Purpose of work:}} to determine the heat of formation of crystalline hydrate \ch{CuSO4*}5\ch{H2O}. \\ 
         
         The heat of formation of crystalline hydrate \ch{CuSO4*}5\ch{H2O} will correspond to
@@ -66,16 +68,18 @@
         
         Also, the calorimeter constant must be determined before determining thermal effects. 
     \newpage
-    \section{Methods and Results}
-    \subsection{Determination of the calorimeter constant}
-   
-    For experimental determination of the calorimeter constant it is necessary to take a salt
-    with a known heat of dissolution (for example: ammonium chloride).
-    A beaker with 100 cm$^3$ of distilled water and a magnetic stirrer is placed in the calorimeter.
-    For uniform heat distribution and complete dissolution of the salt, intensive stirring is carried out for 3-5 minutes (preparatory phase).
-    After the preparatory phase, 2 grams of anhydrous salt is placed in the beaker (Main Period).
-    The end of the "Main period" can be counted when the temperature begins to change linearly (at a constant rate).
-    After another 10 counts are taken, this period will be considered the "end period". \\
+
+    \addcontentsline{toc}{section}{Methods and Results}
+    \section*{Methods and Results}
+        \addcontentsline{toc}{subsection}{Determination of the calorimeter constant}
+        \subsection*{Determination of the calorimeter constant}
+            \hspace{4mm} For experimental determination of the calorimeter constant it is necessary to take a salt
+            with a known heat of dissolution (for example: ammonium chloride).
+            A beaker with 100 cm$^3$ of distilled water and a magnetic stirrer is placed in the calorimeter.
+            For uniform heat distribution and complete dissolution of the salt, intensive stirring is carried out for 3-5 minutes (preparatory phase).
+            After the preparatory phase, 2 grams of anhydrous salt is placed in the beaker (Main Period).
+            The end of the "Main period" can be counted when the temperature begins to change linearly (at a constant rate).
+            After another 10 counts are taken, this period will be considered the "end period". \\
      
     \begin{figure}[h]
         \centering
@@ -138,10 +142,11 @@
 
 
         
-
-        \subsection{Determination of the heat effect of dissolution
-anhydrous salt }
-        For experimental determination of the heat effect of dissolution of anhydrous salt CuSO4. A beaker in which 100 cm³ of distilled water is poured and a magnetic stirrer is placed is placed in the calorimeter. For uniform heat distribution and complete dissolution of the salt, intensive stirring is carried out for 3-5 minutes (preparatory phase). After the preparatory phase, 2 grams of anhydrous salt is placed in the beaker (Main Period). The end of the Main Period can be determined when the temperature begins to change linearly (at a constant rate). Another 10 counts should then be taken and this period will be considered the "End Period".
+        \addcontentsline{toc}{subsection}{Determination of the heat effect of dissolution
+        anhydrous salt}
+        \subsection*{Determination of the heat effect of dissolution
+anhydrous salt}
+        \hspace{4mm} For experimental determination of the heat effect of dissolution of anhydrous salt CuSO4. A beaker in which 100 cm³ of distilled water is poured and a magnetic stirrer is placed is placed in the calorimeter. For uniform heat distribution and complete dissolution of the salt, intensive stirring is carried out for 3-5 minutes (preparatory phase). After the preparatory phase, 2 grams of anhydrous salt is placed in the beaker (Main Period). The end of the Main Period can be determined when the temperature begins to change linearly (at a constant rate). Another 10 counts should then be taken and this period will be considered the "End Period".
         \begin{figure}[h]
             \centering
             \begin{tikzpicture}
@@ -176,9 +181,9 @@ anhydrous salt }
         --a fucking place to calculate--
        
 
-
-        \subsection{Determination of heat of dissolution of crystalline hydrate}
-        As in experiment 2.2 all conditions remain the same, only instead of anhydrous salt the crystalline hydrate is used.
+        \addcontentsline{toc}{subsection}{Determination of heat of dissolution of crystalline hydrate}
+        \subsection*{Determination of heat of dissolution of crystalline hydrate}
+        \hspace{4mm} As in experiment 2.2 all conditions remain the same, only instead of anhydrous salt the crystalline hydrate is used.
         \begin{figure}[h]
             \centering
             \begin{tikzpicture}
@@ -210,14 +215,16 @@ anhydrous salt }
          where $ m_{hydl}$, $m_{water}$ - the mass of crystalline hydrate  and water, respectively, g; $M_{hyd}$ - is the molecular mass of crystalline hydrate, g/mol; c - the specific heat capacity of the formed solution; $\Delta T$ - the temperature change during the experiment, °C. \\
 
          --a fucking place to calculate--
-
-         \subsection{Determination of the heat of formation of crystalline hydrate}
-         The heat of formation of crystalline hydrate is calculated from Hess's Law by formula (2).
+        
+         \addcontentsline{toc}{subsection}{Determination of the heat of formation of crystalline hydrate}
+         \subsection*{Determination of the heat of formation of crystalline hydrate}
+         \hspace{4mm} The heat of formation of crystalline hydrate is calculated from Hess's Law by formula (2).
          \begin{equation}
             \enthalpy*(hyd){} = 
         \end{equation}
 
-    \section{Conclusions}
+    \addcontentsline{toc}{section}{Conclusions}
+    \section*{Conclusions}
         bla-bla-bla
 
 
@@ -236,7 +243,9 @@ anhydrous salt }
 
     
     \newpage
-    \section{References}
+
+    \addcontentsline{toc}{section}{References}
+    \section*{References}
         1
         2
         3
