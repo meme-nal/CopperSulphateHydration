@@ -4,10 +4,10 @@
     chemmacros,
     tikz,
     pgfplots,
-    pgfplotstable,
     filecontents,
     datatool
 }
+\pgfplotsset{compat=1.5}
 
 \linespread{1} % The space between lines in text
 \pgfplotsset{model/.style = {red}}
@@ -205,31 +205,31 @@ anhydrous salt}
                         ylabel=$T$,
                         xlabel=$t$,
                         xmin=0, xmax=330,
-                        ymin=22, ymax=22.2,
+                        ymin=21.7, ymax=21.8,
                         xtick={0,20,...,300},
                         xticklabel style={rotate=45, anchor=east},
-                        ytick={22,22.02,...,22.2},
+                        ytick={21.7,21.71,...,21.8},
                         axis lines=middle,
                         grid=both
                     ]
-                    \addplot [only marks] table [col sep=comma] {../data/raw/experiment3.csv};
-                    \addplot [model] table [col sep=comma] {../data/raw/experiment3.csv};
-
-                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(100,22.098)(0,22.098)};
-                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(200,22.117)(0,22.117)};
-                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(150,22.1075)(0,22.1075)};
-                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(170,22.1499)(10,22.038)}; % AB
-                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(300,22.160)(100,22.0742)}; % CD
-                    \draw[<->, thick, magenta, color=black] (axis cs: 125.4412,22.0869) -- (axis cs: 125.4412,22.1187); %прямая delta T
+                    \addplot [only marks] table [col sep=comma] {../data/raw/experiment3new.csv};
+                    \addplot [model] table [col sep=comma] {../data/raw/experiment3new.csv};
+                    
+                    %\addplot[thick, smooth, magenta, color=black, dashed] coordinates {(100,22.098)(0,22.098)};
+                    %\addplot[thick, smooth, magenta, color=black, dashed] coordinates {(200,22.117)(0,22.117)};
+                    %\addplot[thick, smooth, magenta, color=black, dashed] coordinates {(150,22.1075)(0,22.1075)};
+                    %\addplot[thick, smooth, magenta, color=black, dashed] coordinates {(170,22.1499)(10,22.038)}; % AB
+                    %\addplot[thick, smooth, magenta, color=black, dashed] coordinates {(300,22.160)(100,22.0742)}; % CD
+                    %\draw[<->, thick, magenta, color=black] (axis cs: 125.4412,22.0869) -- (axis cs: 125.4412,22.1187); %прямая delta T
                         % delta T = 0.0318
-                        \coordinate[label={-90:$A$}] (A) at (axis cs:10,22.038);
-                        \coordinate[label={-90:$B$}] (B) at (axis cs:100,22.098);
-                        \coordinate[label={90:$C$}] (C) at (axis cs:200,22.117);
-                        \coordinate[label={90:$D$}] (D) at (axis cs:300,22.160);
-                        \coordinate[label={90:$g$}] (g) at (axis cs:135,22.1065);
-                        \coordinate[label={90:$n$}] (n) at (axis cs:10,22.098);
-                        \coordinate[label={90:$m$}] (m) at (axis cs:10,22.117);
-                        \coordinate[label={90:$k$}] (k) at (axis cs:10,22.1075);
+                        %\coordinate[label={-90:$A$}] (A) at (axis cs:10,22.038);
+                        %\coordinate[label={-90:$B$}] (B) at (axis cs:100,22.098);
+                        %\coordinate[label={90:$C$}] (C) at (axis cs:200,22.117);
+                        %\coordinate[label={90:$D$}] (D) at (axis cs:300,22.160);
+                        %\coordinate[label={90:$g$}] (g) at (axis cs:135,22.1065);
+                        %\coordinate[label={90:$n$}] (n) at (axis cs:10,22.098);
+                        %\coordinate[label={90:$m$}] (m) at (axis cs:10,22.117);
+                        %\coordinate[label={90:$k$}] (k) at (axis cs:10,22.1075);
                 \end{axis}
             \end{tikzpicture}
              \caption{Dissolution graph of \ch{CuSO4*}5 \ch{H2O} in distilled water}
