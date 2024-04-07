@@ -1,4 +1,4 @@
-# ErastGenius
+# Copper Sulphate Hydration
 
 ## Introduction
 
