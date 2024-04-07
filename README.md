@@ -30,7 +30,3 @@ Related fields and skills:
 - Programming
 - Biophysics
 - Math
-
-## About experiments
-
-In our experiments, we tried to determine the enthalpy of hydration of anhydrous salt
