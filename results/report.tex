@@ -124,20 +124,15 @@
         
      Determination of the calorimeter constant:
     \begin{equation}
-       K = -\frac{\Delta H_m \cdot m_{sal}}{ \Delta T \cdot M} - \left(m_{sal} + m_{water}\right) \cdot c 
+       K = \frac{\Delta H_m \cdot n_{sal}}{ \Delta T}
     \end{equation}
-        where $\Delta H_m$ - integral heat of dissolution of salt, expressed in J/mol;
-        $\Delta T$ is the temperature change during experiment, measured in °C; 
-        $m_{\text{sal}}$ and $m_{\text{water}}$ represent the mass of salt and water, respectively, in grams; 
-        $M$ denotes the molecular weight of the salt, measured in g/mol; 
-        and $c$ is the specific heat capacity of the resulting solution
+        \hspace{4mm} where $\Delta H_m$ - integral heat of dissolution of salt, expressed in J/mol; $\Delta T$ is the temperature change during experiment, measured in °C; n - quantity of substance, in moles; $c$ is the specific heat capacity of the resulting solution
         (the heat capacity of dilute solutions of inorganic salts in water is practically the same and slightly differs from the heat capacity of water, specifically $c = 4.184$ J/\ch{(g*K)}. \\ 
-        
         Thus, by projecting points B and C onto the ordinate axis, then drawing a line parallel to OX, we obtain lines m and n, respectively. The line k is the midpoint of the segment mn, drawn to intersect with the graph, let us call the point of intersection - g. Extrapolating AB and CD, a vertical line passing through g, corresponding to $\Delta T$, was found. \\  \\     
         After plotting, the constant of the calorimeter is calculated:
     
     \begin{equation}
-       K = -\frac{15.1 \cdot 2}{ (22.43853 - 21.19577) \cdot 53.49} - \left(2 + 100\right) \cdot 4.184  = -427.2223 \hspace{2 mm} \ch{J/°C}
+        K = \frac{15100 \cdot 0.0374}{22.4382 - 21.1912} = 452.88 \, \text{kJ/°C}
     \end{equation}
 
 
@@ -148,7 +143,13 @@
         \subsection*{Determination of the heat effect of dissolution
 anhydrous salt}
         \hspace{4mm} For experimental determination of the heat effect of dissolution of anhydrous salt CuSO4. A beaker in which 100 cm³ of distilled water is poured and a magnetic stirrer is placed is placed in the calorimeter. For uniform heat distribution and complete dissolution of the salt, intensive stirring is carried out for 3-5 minutes (preparatory phase). After the preparatory phase, 2 grams of anhydrous salt is placed in the beaker (Main Period). The end of the Main Period can be determined when the temperature begins to change linearly (at a constant rate). Another 10 counts should then be taken and this period will be considered the "End Period".
-        \begin{figure}[h]
+        
+        Determination of the integral heat of dissolution of an anhydrous salt: 
+        \begin{equation}
+            \Delta_{sol}H^\circ_{dry} = \frac{-(K + (m_{water} + m_{crystal}) \cdot c) \cdot \Delta T \cdot M_{crystal}}{m_{crystal}}
+        \end{equation}
+        where $ m_{crystal}$, $m_{water}$ - the mass of anhydrous salt and water, respectively, g; $M_{crystal}$ - is the molecular mass of anhydrous salt, g/mol; c - the specific heat capacity of the formed solution; $\Delta T$ - the temperature change during the experiment, °C. \\ 
+    \begin{figure}[h]
             \centering
             \begin{tikzpicture}
                 \begin{axis}[scale only axis,
@@ -183,53 +184,52 @@ anhydrous salt}
                 \end{axis}
             \end{tikzpicture}
             \caption{Dissolution graph of \ch{CuSO4} in distilled water}
-        \end{figure}
-        Determination of the integral heat of dissolution of an anhydrous salt: 
+        \end{figure} \\ \\
         \begin{equation}
-            \Delta_{sol}H^\circ_{dry} = \frac{-(K + (m_{water} + m_{crystal}) \cdot c) \cdot \Delta T \cdot M_{crystal}}{m_{crystal}}
+            \Delta_{sol}H^\circ_{dry} = \frac{-(452.88 + (100 + 2) \cdot 4.184) \cdot (23.323 - 22.37016) \cdot 159,61}{2} = -66889.662 \hspace{2 mm} J
         \end{equation}
-        where $ m_{crystal}$, $m_{water}$ - the mass of anhydrous salt and water, respectively, g; $M_{crystal}$ - is the molecular mass of anhydrous salt, g/mol; c - the specific heat capacity of the formed solution; $\Delta T$ - the temperature change during the experiment, °C. \\
 
 
-        --a fucking place to calculate--
+        
        
 
         \addcontentsline{toc}{subsection}{Determination of heat of dissolution of crystalline hydrate}
         \subsection*{Determination of heat of dissolution of crystalline hydrate}
-        \hspace{4mm} As in experiment 2.2 all conditions remain the same, only instead of anhydrous salt the crystalline hydrate is used.
+        \hspace{4mm} As in experiment 2 all conditions remain the same, only instead of anhydrous salt the crystalline hydrate is used.
         \begin{figure}[h]
             \centering
             \begin{tikzpicture}
-                \begin{axis}[scale only axis,
+               \begin{axis}[scale only axis,
                         width=12cm,
                         ylabel=$T$,
                         xlabel=$t$,
                         xmin=0, xmax=330,
-                        ymin=21.7, ymax=21.8,
+                        ymin=21.10, ymax=21.86,
                         xtick={0,20,...,300},
                         xticklabel style={rotate=45, anchor=east},
-                        ytick={21.7,21.71,...,21.8},
+                        ytick={21.21,21.31,...,21.85},
                         axis lines=middle,
                         grid=both
                     ]
-                    \addplot [only marks] table [col sep=comma] {../data/raw/experiment3new.csv};
-                    \addplot [model] table [col sep=comma] {../data/raw/experiment3new.csv};
+                    \addplot [only marks] table [col sep=comma] {../data/raw/experiment3.csv};
+                    \addplot [model] table [col sep=comma] {../data/raw/experiment3.csv};
                     
-                    %\addplot[thick, smooth, magenta, color=black, dashed] coordinates {(100,22.098)(0,22.098)};
-                    %\addplot[thick, smooth, magenta, color=black, dashed] coordinates {(200,22.117)(0,22.117)};
-                    %\addplot[thick, smooth, magenta, color=black, dashed] coordinates {(150,22.1075)(0,22.1075)};
-                    %\addplot[thick, smooth, magenta, color=black, dashed] coordinates {(170,22.1499)(10,22.038)}; % AB
-                    %\addplot[thick, smooth, magenta, color=black, dashed] coordinates {(300,22.160)(100,22.0742)}; % CD
-                    %\draw[<->, thick, magenta, color=black] (axis cs: 125.4412,22.0869) -- (axis cs: 125.4412,22.1187); %прямая delta T
-                        % delta T = 0.0318
-                        %\coordinate[label={-90:$A$}] (A) at (axis cs:10,22.038);
-                        %\coordinate[label={-90:$B$}] (B) at (axis cs:100,22.098);
-                        %\coordinate[label={90:$C$}] (C) at (axis cs:200,22.117);
-                        %\coordinate[label={90:$D$}] (D) at (axis cs:300,22.160);
-                        %\coordinate[label={90:$g$}] (g) at (axis cs:135,22.1065);
-                        %\coordinate[label={90:$n$}] (n) at (axis cs:10,22.098);
-                        %\coordinate[label={90:$m$}] (m) at (axis cs:10,22.117);
-                        %\coordinate[label={90:$k$}] (k) at (axis cs:10,22.1075);
+                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(110,21.282)(0,21.282)};
+                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(210,21.792)(0,21.792)};
+                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(180,21.537)(0,21.537)};
+                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(170,22.1499)(10,22.038)}; %
+                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(230,21.785)(120,21.813)}; 
+                    \addplot[thick, smooth, magenta, color=black, dashed] coordinates {(100,21.253)(170,21.4)};
+                    
+                    \draw[<->, thick, magenta, color=black] (axis cs: 115,21.282) -- (axis cs: 140,21.807); 
+                        \coordinate[label={-90:$A$}] (A) at (axis cs:10,21.259);
+                        \coordinate[label={-90:$B$}] (B) at (axis cs:110,21.282);
+                        \coordinate[label={90:$C$}] (C) at (axis cs:210,21.792);
+                        \coordinate[label={90:$D$}] (D) at (axis cs:300,21.76);
+                        \coordinate[label={90:$g$}] (g) at (axis cs:140,21.537);
+                        \coordinate[label={90:$n$}] (n) at (axis cs:10,21.29);
+                        \coordinate[label={-90:$m$}] (m) at (axis cs:10,21.790);
+                        \coordinate[label={90:$k$}] (k) at (axis cs:10,21.537);
                 \end{axis}
             \end{tikzpicture}
              \caption{Dissolution graph of \ch{CuSO4*}5 \ch{H2O} in distilled water}
@@ -240,41 +240,25 @@ anhydrous salt}
         \end{equation}
          where $ m_{hydl}$, $m_{water}$ - the mass of crystalline hydrate  and water, respectively, g; $M_{hyd}$ - is the molecular mass of crystalline hydrate, g/mol; c - the specific heat capacity of the formed solution; $\Delta T$ - the temperature change during the experiment, °C. \\
 
-         --a fucking place to calculate--
+          \begin{equation}
+            \Delta_{sol}H^\circ_{hyd} = \frac{-(452.88 + (100 + 2) \cdot 4.184) \cdot (21,792 - 21,282) \cdot 250}{2} =-56077.56 \hspace{2 mm} J
+        \end{equation}
         
          \addcontentsline{toc}{subsection}{Determination of the heat of formation of crystalline hydrate}
          \subsection*{Determination of the heat of formation of crystalline hydrate}
          \hspace{4mm} The heat of formation of crystalline hydrate is calculated from Hess's Law by formula (2).
          \begin{equation}
-            \enthalpy*(hyd){} = 
+             \Delta H_{\text{hyd}} = -66889.662 - (-56077.56) = -10812.102 , \text{J} = -10.81 , \text{kJ} 
         \end{equation}
 
     \addcontentsline{toc}{section}{Conclusions}
     \section*{Conclusions}
-        bla-bla-bla
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+         In this work, the heat of formation of copper sulfate was experimentally confirmed. The error in the calculation under standard conditions is about 3 percent
     \newpage
 
     \addcontentsline{toc}{section}{References}
     \section*{References}
-        1
-        2
-        3
-        4
+        1. S.V. Shtin: Physical Chemistry. Thermochemistry: manual for laboratory practice Chelyabinsk: Publishing Center SUSU, 2014.- 41 p.
+
 
 \end{document}
