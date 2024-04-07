@@ -13,31 +13,24 @@ The results of data processing are in report.pdf file
 
 ### Erast
 
-!little description!
-
+The student of the Mordovian State University Institute of High-tech Technologies and New Materials
 
 Related fields and skills:
-- chemistry
-- programming (especially using python language for reseacrhing)
+- Chemistry
+- Physics
+- Programming
 
 link to the author: https://github.com/Stefa223
 
 ### MM
 
-The owner of this repository
-!little description!
+The student of RTU MIREA Institute of artifial intelligence
 
 Related fields and skills:
-- Have no skills =\
-- Another skill
+- Programming
+- Biophysics
+- Math
 
 ## About experiments
 
-### First experiment
-NH4Cl
-
-### Second experiment
-CuSO4 anhydrate
-
-### Third experiment
-CuSO4*5H2O
+In our experiments, we tried to determine the enthalpy of hydration of anhydrous salt
